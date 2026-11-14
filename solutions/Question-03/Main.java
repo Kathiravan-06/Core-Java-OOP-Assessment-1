@@ -1,0 +1,42 @@
+import java.util.*;
+interface Payment {
+    double calculateFee(double amount);
+}
+class CreditCardPayment implements Payment {
+    public double calculateFee(double amount) {
+        return amount * 2 / 100;
+    }
+}
+class UpiPayment implements Payment {
+    public double calculateFee(double amount) {
+        return amount * 0.5 / 100;
+    }
+}
+class WalletPayment implements Payment {
+    public double calculateFee(double amount) {
+        return amount * 1 / 100;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int type = sc.nextInt();
+        double amount = sc.nextDouble();
+        Payment payment;
+        switch (type) {
+            case 1:
+                payment = new CreditCardPayment();
+                break;
+            case 2:
+                payment = new UpiPayment();
+                break;
+            default:
+                payment = new WalletPayment();
+        }
+        double fee = payment.calculateFee(amount);
+        double total = amount + fee;
+        System.out.printf(Locale.US, "Payment Amount: %.2f%n", amount);
+        System.out.printf(Locale.US, "Transaction Fee: %.2f%n", fee);
+        System.out.printf(Locale.US, "Final Amount: %.2f%n", total);
+    }
+}
