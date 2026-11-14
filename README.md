@@ -72,8 +72,6 @@ Core-Java-OOP-Assessment-1/
         └── Main.java
 
 
----
+Author: Kathiravan Eswaramoorthy
 
-**Author:** Kathiravan Eswaramoorthy
-
-**Repository:** Core Java OOP Assessment – 1
+Repository: Core Java OOP Assessment – 1
